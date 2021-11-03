@@ -25,9 +25,9 @@ COPY site3.conf /etc/apache2/sites-available
 
 # create user and public_html dir, copy files
 RUN useradd -ms /bin/bash $USER
-RUN mkdir /home/$USER/public_html 
-COPY $USER.html /home/$USER/public_html/index.html
-COPY $USER/assets /home/$USER/public_html/assets
+RUN mkdir -p /home/$USER/public_html/Dev
+COPY $USER/public_html/index.html /home/$USER/public_html
+COPY $USER/public_html/Dev/index.html /home/$USER/public_html/Dev
 RUN chown -R $USER.$USER /home/$USER
 
 LABEL maintainer="monica.luong.234@my.csun.edu"
