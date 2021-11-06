@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Enter the correct password"
+AuthUserFile /home/ml855063/.htpasswd
+Require valid-user
